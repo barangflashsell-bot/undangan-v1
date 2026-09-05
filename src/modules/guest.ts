@@ -19,7 +19,6 @@ export function generateGuestLink(guestName: string): string {
 }
 
 export function setupGuestEditor(getCoupleNames: () => string) {
-  const btnEdit = document.getElementById('btn-edit-guest');
   const guestNameEl = document.getElementById('guest-name-cover');
   const modal = document.getElementById('guest-edit-modal');
   const closeModal = document.getElementById('guest-edit-close');
@@ -40,14 +39,23 @@ export function setupGuestEditor(getCoupleNames: () => string) {
     modal?.classList.remove('active');
   }
 
-  btnEdit?.addEventListener('click', (e) => {
+  // Double-click to edit on desktop
+  guestNameEl?.addEventListener('dblclick', (e) => {
     e.stopPropagation();
     openModal();
   });
 
-  guestNameEl?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    openModal();
+  // Double-tap detector for mobile touchscreens
+  let lastTapTime = 0;
+  guestNameEl?.addEventListener('touchend', (e) => {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTapTime;
+    if (tapLength < 380 && tapLength > 0) {
+      e.preventDefault();
+      e.stopPropagation();
+      openModal();
+    }
+    lastTapTime = currentTime;
   });
 
   closeModal?.addEventListener('click', hideModal);
