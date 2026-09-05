@@ -61,8 +61,16 @@
 
       <div class="cover-guest-card animate-fade-up">
         <span class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i:</span>
-        <h2 id="guest-name-cover" class="guest-name">Tamu Undangan</h2>
-        <p class="guest-notice">*Mohon maaf bila ada kesalahan penulisan nama/gelar</p>
+        <div class="guest-name-wrapper">
+          <h2 id="guest-name-cover" class="guest-name" title="Klik untuk mengubah nama tamu">Tamu Undangan</h2>
+          <button id="btn-edit-guest" class="btn-edit-guest" title="Ubah Nama Tamu &amp; Buat Link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="edit-guest-svg">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+            </svg>
+          </button>
+        </div>
+        <p class="guest-notice">*Klik ikon pensil untuk mengubah nama tamu atau membuat link WhatsApp</p>
       </div>
 
       <button id="btn-open-invitation" class="btn-open animate-bounce">
@@ -510,6 +518,40 @@
       <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
     <button id="lightbox-next" class="lightbox-nav-btn next" aria-label="Foto Berikutnya">&#10095;</button>
+  </div>
+
+  <!-- =====================================================================
+       GUEST NAME EDITOR & LINK GENERATOR MODAL
+       ===================================================================== -->
+  <div id="guest-edit-modal" class="admin-modal-overlay" role="dialog" aria-modal="true">
+    <div class="guest-modal-card">
+      <div class="pin-icon">💌</div>
+      <h2 class="guest-modal-title">Ubah Nama Tamu</h2>
+      <p class="guest-modal-subtitle">Ketik nama tamu untuk ditampilkan pada sampul, atau salin link khusus untuk dikirim via WhatsApp.</p>
+      
+      <div class="admin-field" style="margin-bottom: 1.2rem; text-align: left;">
+        <label class="admin-label">Nama Tamu Undangan:</label>
+        <input type="text" id="input-guest-name" class="admin-input" placeholder="Contoh: Bapak Hendy &amp; Partner" />
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <button id="btn-apply-guest" class="btn-gold btn-block">
+          <span>✓ Terapkan Nama di Sampul</span>
+        </button>
+        <button id="btn-copy-guest-link" class="btn-outline btn-block">
+          <span>📋 Salin Link Undangan Khusus Tamu</span>
+        </button>
+        <button id="btn-share-wa" class="btn-wa-green btn-block">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px;">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.423-10.416c-4.411 0-8 3.589-8 8 0 1.542.441 2.984 1.203 4.212l-1.267 4.632 4.757-1.247c1.179.702 2.556 1.103 4.027 1.103 4.411 0 8-3.589 8-8 0-4.411-3.589-8-8-8z"/>
+          </svg>
+          <span>Kirim Undangan via WhatsApp</span>
+        </button>
+        <button id="guest-edit-close" class="btn-outline btn-block" style="border-color: rgba(255,255,255,0.2); color: var(--color-text-muted);">
+          Tutup
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- =====================================================================

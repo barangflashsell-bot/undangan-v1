@@ -2,7 +2,7 @@ import './style.css';
 import confetti from 'canvas-confetti';
 import type { InvitationConfig } from './types';
 import { getActiveInvitationData } from './data/invitationData';
-import { getGuestName } from './modules/guest';
+import { getGuestName, setupGuestEditor } from './modules/guest';
 import { initCountdown, createGoogleCalendarUrl } from './modules/countdown';
 import { audioEngine, setupAudioPlayerUI } from './modules/audioPlayer';
 import { initPetals } from './modules/petals';
@@ -14,12 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // 1. Initial Data
   let currentData = getActiveInvitationData();
 
-  // 2. Set personalized guest name
+  // 2. Set personalized guest name & editor
   const guestName = getGuestName();
   const guestNameEl = document.getElementById('guest-name-cover');
   if (guestNameEl) {
     guestNameEl.textContent = guestName;
   }
+  setupGuestEditor(() => `${currentData.groom.shortName} & ${currentData.bride.shortName}`);
 
   // 3. Render dynamic content based on InvitationConfig
   function renderInvitationUI(data: InvitationConfig) {
