@@ -23,7 +23,7 @@
   <!-- Falling Petals Background Canvas -->
   <canvas id="petals-canvas" class="petals-canvas"></canvas>
 
-  <!-- Floating Audio Button -->
+  <!-- Floating Audio Button (Bottom Right) -->
   <div id="music-control" class="music-control hidden" aria-label="Kontrol Pemutar Musik">
     <button id="music-toggle-btn" class="music-btn" title="Nyalakan / Matikan Musik">
       <div id="music-disc" class="music-disc">
@@ -38,6 +38,14 @@
     </button>
   </div>
 
+  <!-- Floating Admin Trigger Button (Bottom Left) -->
+  <button id="admin-open-btn" class="admin-trigger-btn" title="Menu Admin &amp; Pengaturan">
+    <svg class="admin-trigger-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="3"></circle>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+    </svg>
+  </button>
+
   <!-- Cover / Lock Screen -->
   <div id="cover-screen" class="cover-screen">
     <div class="cover-backdrop"></div>
@@ -48,8 +56,8 @@
         <span class="ornament-leaf">❦</span>
       </div>
 
-      <h1 class="cover-title animate-zoom-in">Bayu <span>&amp;</span> Sara</h1>
-      <p class="cover-date animate-fade-up">Sabtu, 14 November 2026</p>
+      <h1 id="cover-title" class="cover-title animate-zoom-in">Bayu <span>&amp;</span> Sara</h1>
+      <p id="cover-date" class="cover-date animate-fade-up">Sabtu, 14 November 2026</p>
 
       <div class="cover-guest-card animate-fade-up">
         <span class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i:</span>
@@ -75,12 +83,12 @@
       <section class="section hero-section">
         <div class="hero-card">
           <div class="hero-image-wrapper">
-            <img src="/images/hero.jpg" alt="Bayu &amp; Sara Prewedding" class="hero-img" loading="eager" />
+            <img id="dom-hero-img" src="/images/hero.jpg" alt="Prewedding Hero Banner" class="hero-img" loading="eager" />
             <div class="hero-overlay"></div>
           </div>
           <div class="hero-content">
             <div class="hero-subtitle">WALIMATUL 'URS</div>
-            <h2 class="hero-names">Bayu &amp; Sara</h2>
+            <h2 id="dom-hero-names" class="hero-names">Bayu &amp; Sara</h2>
             <div class="hero-divider">
               <span class="line"></span>
               <span class="diamond">◆</span>
@@ -113,21 +121,21 @@
           <!-- Groom Card -->
           <div class="couple-card">
             <div class="photo-frame">
-              <img src="/images/groom.jpg" alt="Foto Raden Bayu Pratama" class="couple-img" loading="lazy" />
+              <img id="dom-groom-img" src="/images/groom.jpg" alt="Foto Pengantin Pria" class="couple-img" loading="lazy" />
               <div class="frame-border"></div>
             </div>
-            <h3 class="person-name">Raden Bayu Pratama, S.T.</h3>
+            <h3 id="dom-groom-fullname" class="person-name">Raden Bayu Pratama, S.T.</h3>
             <p class="parents-info">
               Putra pertama dari:<br />
-              <strong>Bpk. H. Bambang Sujatmo</strong> &amp; <strong>Ibu Hj. Sri Rahayu</strong>
+              <strong id="dom-groom-father">Bpk. H. Bambang Sujatmo</strong> &amp; <strong id="dom-groom-mother">Ibu Hj. Sri Rahayu</strong>
             </p>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <a id="dom-groom-ig-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ig-icon">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
-              <span>@bayu.pratama</span>
+              <span id="dom-groom-ig-text">@bayu.pratama</span>
             </a>
           </div>
 
@@ -136,21 +144,21 @@
           <!-- Bride Card -->
           <div class="couple-card">
             <div class="photo-frame">
-              <img src="/images/bride.jpg" alt="Foto Sarah Anindya Putri" class="couple-img" loading="lazy" />
+              <img id="dom-bride-img" src="/images/bride.jpg" alt="Foto Pengantin Wanita" class="couple-img" loading="lazy" />
               <div class="frame-border"></div>
             </div>
-            <h3 class="person-name">Sarah Anindya Putri, S.Ds.</h3>
+            <h3 id="dom-bride-fullname" class="person-name">Sarah Anindya Putri, S.Ds.</h3>
             <p class="parents-info">
               Putri kedua dari:<br />
-              <strong>Bpk. Ir. Hendro Kusumo</strong> &amp; <strong>Ibu Hj. Ratna Juwita</strong>
+              <strong id="dom-bride-father">Bpk. Ir. Hendro Kusumo</strong> &amp; <strong id="dom-bride-mother">Ibu Hj. Ratna Juwita</strong>
             </p>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">
+            <a id="dom-bride-ig-link" href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ig-icon">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
               </svg>
-              <span>@sarah.anindya</span>
+              <span id="dom-bride-ig-text">@sarah.anindya</span>
             </a>
           </div>
         </div>
@@ -213,15 +221,15 @@
                 <circle cx="12" cy="12" r="10"></circle>
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
-              <span>08:00 - 10:00 WIB</span>
+              <span id="dom-akad-time">08:00 - 10:00 WIB</span>
             </div>
-            <h3 class="event-date">Sabtu, 14 November 2026</h3>
+            <h3 id="dom-akad-date" class="event-date">Sabtu, 14 November 2026</h3>
             <div class="event-location">
-              <strong>Masjid Agung Sunda Kelapa</strong>
-              <p>Jl. Taman Sunda Kelapa No.16, Menteng, Jakarta Pusat</p>
+              <strong id="dom-akad-venue">Masjid Agung Sunda Kelapa</strong>
+              <p id="dom-akad-address">Jl. Taman Sunda Kelapa No.16, Menteng, Jakarta Pusat</p>
             </div>
             <p class="event-note">Diharapkan hadir 15 menit sebelum acara dimulai dengan tertib &amp; khidmat.</p>
-            <a href="https://maps.google.com/?q=Masjid+Agung+Sunda+Kelapa+Jakarta" target="_blank" rel="noopener noreferrer" class="btn-outline">
+            <a id="dom-akad-maps" href="https://maps.google.com/?q=Masjid+Agung+Sunda+Kelapa+Jakarta" target="_blank" rel="noopener noreferrer" class="btn-outline">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-svg">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
@@ -238,15 +246,15 @@
                 <circle cx="12" cy="12" r="10"></circle>
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
-              <span>11:00 - 14:00 WIB</span>
+              <span id="dom-reception-time">11:00 - 14:00 WIB</span>
             </div>
-            <h3 class="event-date">Sabtu, 14 November 2026</h3>
+            <h3 id="dom-reception-date" class="event-date">Sabtu, 14 November 2026</h3>
             <div class="event-location">
-              <strong>Grand Ballroom Hotel Indonesia Kempinski</strong>
-              <p>Jl. M.H. Thamrin No.1, Menteng, Kota Jakarta Pusat</p>
+              <strong id="dom-reception-venue">Grand Ballroom Hotel Indonesia Kempinski</strong>
+              <p id="dom-reception-address">Jl. M.H. Thamrin No.1, Menteng, Kota Jakarta Pusat</p>
             </div>
             <p class="event-note">Dresscode: Formal Modern / Batik Elegance</p>
-            <a href="https://maps.google.com/?q=Hotel+Indonesia+Kempinski+Jakarta" target="_blank" rel="noopener noreferrer" class="btn-gold">
+            <a id="dom-reception-maps" href="https://maps.google.com/?q=Hotel+Indonesia+Kempinski+Jakarta" target="_blank" rel="noopener noreferrer" class="btn-gold">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-svg">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                 <circle cx="12" cy="10" r="3"></circle>
@@ -314,42 +322,42 @@
 
         <div class="gallery-grid">
           <div class="gallery-item item-large" data-gallery-index="0">
-            <img src="/images/hero.jpg" alt="Gallery 1" loading="lazy" />
+            <img id="dom-gal-0" src="/images/hero.jpg" alt="Gallery 1" loading="lazy" />
             <div class="gallery-hover-overlay">
               <span class="gallery-view-icon">🔍</span>
-              <span class="gallery-hover-caption">Kisah kasih di antara hijaunya rumah kaca botanika</span>
+              <span id="dom-gal-cap-0" class="gallery-hover-caption">Kisah kasih di antara hijaunya rumah kaca botanika</span>
             </div>
           </div>
 
           <div class="gallery-item" data-gallery-index="1">
-            <img src="/images/gallery-1.jpg" alt="Gallery 2" loading="lazy" />
+            <img id="dom-gal-1" src="/images/gallery-1.jpg" alt="Gallery 2" loading="lazy" />
             <div class="gallery-hover-overlay">
               <span class="gallery-view-icon">🔍</span>
-              <span class="gallery-hover-caption">Menatap masa depan bersama di hamparan lembah emas</span>
+              <span id="dom-gal-cap-1" class="gallery-hover-caption">Menatap masa depan bersama di hamparan lembah emas</span>
             </div>
           </div>
 
           <div class="gallery-item" data-gallery-index="2">
-            <img src="/images/gallery-2.jpg" alt="Gallery 3" loading="lazy" />
+            <img id="dom-gal-2" src="/images/gallery-2.jpg" alt="Gallery 3" loading="lazy" />
             <div class="gallery-hover-overlay">
               <span class="gallery-view-icon">🔍</span>
-              <span class="gallery-hover-caption">Canda dan tawa dalam kehangatan malam</span>
+              <span id="dom-gal-cap-2" class="gallery-hover-caption">Canda dan tawa dalam kehangatan malam</span>
             </div>
           </div>
 
           <div class="gallery-item" data-gallery-index="3">
-            <img src="/images/groom.jpg" alt="Groom Portrait" loading="lazy" />
+            <img id="dom-gal-3" src="/images/groom.jpg" alt="Groom Portrait" loading="lazy" />
             <div class="gallery-hover-overlay">
               <span class="gallery-view-icon">🔍</span>
-              <span class="gallery-hover-caption">Raden Bayu Pratama</span>
+              <span id="dom-gal-cap-3" class="gallery-hover-caption">Raden Bayu Pratama</span>
             </div>
           </div>
 
           <div class="gallery-item" data-gallery-index="4">
-            <img src="/images/bride.jpg" alt="Bride Portrait" loading="lazy" />
+            <img id="dom-gal-4" src="/images/bride.jpg" alt="Bride Portrait" loading="lazy" />
             <div class="gallery-hover-overlay">
               <span class="gallery-view-icon">🔍</span>
-              <span class="gallery-hover-caption">Sarah Anindya Putri</span>
+              <span id="dom-gal-cap-4" class="gallery-hover-caption">Sarah Anindya Putri</span>
             </div>
           </div>
         </div>
@@ -368,14 +376,14 @@
           <div class="bank-card">
             <div class="bank-top">
               <span class="bank-chip"></span>
-              <span class="bank-brand">BCA</span>
+              <span id="dom-bank1-brand" class="bank-brand">BCA</span>
             </div>
-            <div class="bank-number">8691 8239 01</div>
+            <div id="dom-bank1-num" class="bank-number">8691 8239 01</div>
             <div class="bank-holder">
               <span>Atas Nama</span>
-              <strong>Raden Bayu Pratama</strong>
+              <strong id="dom-bank1-holder">Raden Bayu Pratama</strong>
             </div>
-            <button class="btn-copy" data-copy-account="8691823901" data-bank="BCA">
+            <button id="dom-bank1-btn" class="btn-copy" data-copy-account="8691823901" data-bank="BCA">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="copy-svg">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -388,14 +396,14 @@
           <div class="bank-card">
             <div class="bank-top">
               <span class="bank-chip"></span>
-              <span class="bank-brand">MANDIRI</span>
+              <span id="dom-bank2-brand" class="bank-brand">MANDIRI</span>
             </div>
-            <div class="bank-number">1370 0192 8472 1</div>
+            <div id="dom-bank2-num" class="bank-number">1370 0192 8472 1</div>
             <div class="bank-holder">
               <span>Atas Nama</span>
-              <strong>Sarah Anindya Putri</strong>
+              <strong id="dom-bank2-holder">Sarah Anindya Putri</strong>
             </div>
-            <button class="btn-copy" data-copy-account="1370019284721" data-bank="Bank Mandiri">
+            <button id="dom-bank2-btn" class="btn-copy" data-copy-account="1370019284721" data-bank="Bank Mandiri">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="copy-svg">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -410,7 +418,7 @@
           <h3 class="qris-title">QRIS Angpao Digital</h3>
           <p class="qris-subtitle">Scan melalui aplikasi mobile banking atau e-wallet (BCA, Mandiri, GoPay, OVO, Dana, dll)</p>
           <div class="qris-image-wrapper">
-            <img src="/images/qris.jpg" alt="QRIS Wedding Gift" class="qris-img" loading="lazy" />
+            <img id="dom-qris-img" src="/images/qris.jpg" alt="QRIS Wedding Gift" class="qris-img" loading="lazy" />
           </div>
         </div>
       </section>
@@ -481,7 +489,7 @@
           </p>
           <div class="footer-closing">
             <span>Kami yang berbahagia,</span>
-            <h3 class="footer-couple-names">Bayu &amp; Sara</h3>
+            <h3 id="dom-footer-couple" class="footer-couple-names">Bayu &amp; Sara</h3>
             <span class="footer-families">Beserta Keluarga Besar Kedua Mempelai</span>
           </div>
           <div class="footer-sub">
@@ -502,6 +510,357 @@
       <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
     <button id="lightbox-next" class="lightbox-nav-btn next" aria-label="Foto Berikutnya">&#10095;</button>
+  </div>
+
+  <!-- =====================================================================
+       ADMIN DASHBOARD MODALS (PIN & DASHBOARD)
+       ===================================================================== -->
+  
+  <!-- PIN Authentication Modal -->
+  <div id="admin-pin-modal" class="admin-modal-overlay" role="dialog" aria-modal="true">
+    <div class="pin-auth-card">
+      <div class="pin-icon">🔐</div>
+      <h2 class="pin-title">Akses Admin</h2>
+      <p class="pin-subtitle">Masukkan PIN admin untuk mengubah data &amp; foto undangan.</p>
+      
+      <input type="password" id="admin-pin-input" class="pin-input-box" maxlength="6" placeholder="••••" autofocus />
+      <p id="pin-error" class="pin-error">PIN yang Anda masukkan salah!</p>
+      
+      <div class="pin-actions">
+        <button id="admin-pin-cancel" class="btn-outline btn-block">Batal</button>
+        <button id="admin-pin-submit" class="btn-gold btn-block">Masuk</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full Admin Dashboard Modal -->
+  <div id="admin-dashboard-modal" class="admin-modal-overlay" role="dialog" aria-modal="true">
+    <div class="admin-dashboard-container">
+      
+      <!-- Header -->
+      <div class="admin-dash-header">
+        <div class="admin-header-title">
+          <h2>⚙️ Dashboard Pengaturan Undangan</h2>
+          <span class="admin-badge-live">Live Editor</span>
+        </div>
+        <button id="admin-dash-close" class="admin-close-btn" title="Tutup">&times;</button>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="admin-tabs-nav">
+        <button class="admin-tab-btn active" data-tab="couple">💑 Mempelai</button>
+        <button class="admin-tab-btn" data-tab="events">📅 Acara &amp; Waktu</button>
+        <button class="admin-tab-btn" data-tab="gift">💳 Amplop &amp; QRIS</button>
+        <button class="admin-tab-btn" data-tab="gallery">🖼️ Galeri Foto</button>
+        <button class="admin-tab-btn" data-tab="export">💾 Ekspor untuk GitHub</button>
+      </div>
+
+      <!-- Dashboard Scrollable Body -->
+      <div class="admin-dash-body">
+        
+        <!-- TAB 1: MEMPELAI -->
+        <div id="tab-couple" class="admin-tab-content active">
+          
+          <!-- Banner Hero Photo -->
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Foto Utama (Hero Banner)</h3>
+            <div class="admin-photo-uploader">
+              <img id="preview-hero" src="/images/hero.jpg" class="photo-preview-thumb" alt="Preview Hero" />
+              <div class="uploader-controls">
+                <label for="file-hero" class="upload-file-btn">
+                  <span>📁 Pilih Foto Banner Baru</span>
+                </label>
+                <input type="file" id="file-hero" class="hidden-file-input" accept="image/*" />
+                <p class="uploader-hint">Format JPG/PNG/WebP. Foto akan otomatis dioptimasi.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mempelai Pria -->
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Pengantin Pria (Groom)</h3>
+            
+            <div class="admin-photo-uploader">
+              <img id="preview-groom" src="/images/groom.jpg" class="photo-preview-thumb" alt="Preview Groom" />
+              <div class="uploader-controls">
+                <label for="file-groom" class="upload-file-btn">
+                  <span>📷 Ganti Foto Mempelai Pria</span>
+                </label>
+                <input type="file" id="file-groom" class="hidden-file-input" accept="image/*" />
+                <p class="uploader-hint">Foto portrait terbaik mempelai pria.</p>
+              </div>
+            </div>
+
+            <div class="admin-grid-2" style="margin-top: 1rem;">
+              <div class="admin-field">
+                <label class="admin-label">Nama Lengkap &amp; Gelar</label>
+                <input type="text" id="admin-groom-name" class="admin-input" placeholder="Raden Bayu Pratama, S.T." />
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">Nama Panggilan</label>
+                <input type="text" id="admin-groom-short" class="admin-input" placeholder="Bayu" />
+              </div>
+            </div>
+
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">Nama Ayah</label>
+                <input type="text" id="admin-groom-father" class="admin-input" placeholder="Bpk. H. Bambang Sujatmo" />
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">Nama Ibu</label>
+                <input type="text" id="admin-groom-mother" class="admin-input" placeholder="Ibu Hj. Sri Rahayu" />
+              </div>
+            </div>
+
+            <div class="admin-field">
+              <label class="admin-label">Username Instagram</label>
+              <input type="text" id="admin-groom-ig" class="admin-input" placeholder="bayu.pratama" />
+            </div>
+          </div>
+
+          <!-- Mempelai Wanita -->
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Pengantin Wanita (Bride)</h3>
+            
+            <div class="admin-photo-uploader">
+              <img id="preview-bride" src="/images/bride.jpg" class="photo-preview-thumb" alt="Preview Bride" />
+              <div class="uploader-controls">
+                <label for="file-bride" class="upload-file-btn">
+                  <span>📷 Ganti Foto Mempelai Wanita</span>
+                </label>
+                <input type="file" id="file-bride" class="hidden-file-input" accept="image/*" />
+                <p class="uploader-hint">Foto portrait terbaik mempelai wanita.</p>
+              </div>
+            </div>
+
+            <div class="admin-grid-2" style="margin-top: 1rem;">
+              <div class="admin-field">
+                <label class="admin-label">Nama Lengkap &amp; Gelar</label>
+                <input type="text" id="admin-bride-name" class="admin-input" placeholder="Sarah Anindya Putri, S.Ds." />
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">Nama Panggilan</label>
+                <input type="text" id="admin-bride-short" class="admin-input" placeholder="Sara" />
+              </div>
+            </div>
+
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">Nama Ayah</label>
+                <input type="text" id="admin-bride-father" class="admin-input" placeholder="Bpk. Ir. Hendro Kusumo" />
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">Nama Ibu</label>
+                <input type="text" id="admin-bride-mother" class="admin-input" placeholder="Ibu Hj. Ratna Juwita" />
+              </div>
+            </div>
+
+            <div class="admin-field">
+              <label class="admin-label">Username Instagram</label>
+              <input type="text" id="admin-bride-ig" class="admin-input" placeholder="sarah.anindya" />
+            </div>
+          </div>
+
+        </div>
+
+        <!-- TAB 2: ACARA & WAKTU -->
+        <div id="tab-events" class="admin-tab-content">
+          
+          <!-- Tanggal Utama untuk Countdown & Kalender -->
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Target Waktu Acara (Countdown &amp; Google Calendar)</h3>
+            <div class="admin-field">
+              <label class="admin-label">Waktu Mulai Acara (WIB)</label>
+              <input type="datetime-local" id="admin-event-date" class="admin-input" />
+              <p class="uploader-hint">Live countdown timer di halaman akan otomatis menghitung ke waktu ini.</p>
+            </div>
+          </div>
+
+          <!-- Akad Nikah -->
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Agenda: Akad Nikah</h3>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">Teks Tanggal</label>
+                <input type="text" id="admin-akad-date" class="admin-input" placeholder="Sabtu, 14 November 2026" />
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">Waktu / Jam</label>
+                <input type="text" id="admin-akad-time" class="admin-input" placeholder="08:00 - 10:00 WIB" />
+              </div>
+            </div>
+            <div class="admin-field">
+              <label class="admin-label">Nama Masjid / Gedung</label>
+              <input type="text" id="admin-akad-venue" class="admin-input" placeholder="Masjid Agung Sunda Kelapa" />
+            </div>
+            <div class="admin-field">
+              <label class="admin-label">Alamat Lengkap</label>
+              <textarea id="admin-akad-address" rows="2" class="admin-textarea" placeholder="Jl. Taman Sunda Kelapa No.16, Menteng, Jakarta Pusat"></textarea>
+            </div>
+            <div class="admin-field">
+              <label class="admin-label">Link Google Maps</label>
+              <input type="url" id="admin-akad-maps" class="admin-input" placeholder="https://maps.google.com/?q=..." />
+            </div>
+          </div>
+
+          <!-- Resepsi Pernikahan -->
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Agenda: Resepsi Pernikahan</h3>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">Teks Tanggal</label>
+                <input type="text" id="admin-reception-date" class="admin-input" placeholder="Sabtu, 14 November 2026" />
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">Waktu / Jam</label>
+                <input type="text" id="admin-reception-time" class="admin-input" placeholder="11:00 - 14:00 WIB" />
+              </div>
+            </div>
+            <div class="admin-field">
+              <label class="admin-label">Nama Gedung / Hotel</label>
+              <input type="text" id="admin-reception-venue" class="admin-input" placeholder="Grand Ballroom Hotel Indonesia Kempinski" />
+            </div>
+            <div class="admin-field">
+              <label class="admin-label">Alamat Lengkap</label>
+              <textarea id="admin-reception-address" rows="2" class="admin-textarea" placeholder="Jl. M.H. Thamrin No.1, Menteng, Kota Jakarta Pusat"></textarea>
+            </div>
+            <div class="admin-field">
+              <label class="admin-label">Link Google Maps</label>
+              <input type="url" id="admin-reception-maps" class="admin-input" placeholder="https://maps.google.com/?q=..." />
+            </div>
+          </div>
+
+        </div>
+
+        <!-- TAB 3: AMPLOP & QRIS -->
+        <div id="tab-gift" class="admin-tab-content">
+          
+          <!-- Bank 1 -->
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Rekening Bank 1</h3>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">Nama Bank</label>
+                <input type="text" id="admin-bank1-name" class="admin-input" placeholder="BCA" />
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">Nomor Rekening</label>
+                <input type="text" id="admin-bank1-number" class="admin-input" placeholder="8691823901" />
+              </div>
+            </div>
+            <div class="admin-field">
+              <label class="admin-label">Atas Nama</label>
+              <input type="text" id="admin-bank1-holder" class="admin-input" placeholder="Raden Bayu Pratama" />
+            </div>
+          </div>
+
+          <!-- Bank 2 -->
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Rekening Bank 2</h3>
+            <div class="admin-grid-2">
+              <div class="admin-field">
+                <label class="admin-label">Nama Bank</label>
+                <input type="text" id="admin-bank2-name" class="admin-input" placeholder="Bank Mandiri" />
+              </div>
+              <div class="admin-field">
+                <label class="admin-label">Nomor Rekening</label>
+                <input type="text" id="admin-bank2-number" class="admin-input" placeholder="1370019284721" />
+              </div>
+            </div>
+            <div class="admin-field">
+              <label class="admin-label">Atas Nama</label>
+              <input type="text" id="admin-bank2-holder" class="admin-input" placeholder="Sarah Anindya Putri" />
+            </div>
+          </div>
+
+          <!-- QRIS Upload -->
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Barcode QRIS Digital</h3>
+            <div class="admin-photo-uploader">
+              <img id="preview-qris" src="/images/qris.jpg" class="photo-preview-thumb square" alt="Preview QRIS" />
+              <div class="uploader-controls">
+                <label for="file-qris" class="upload-file-btn">
+                  <span>📱 Upload Gambar QRIS Anda</span>
+                </label>
+                <input type="file" id="file-qris" class="hidden-file-input" accept="image/*" />
+                <p class="uploader-hint">Upload gambar barcode QRIS dari m-banking Anda.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- TAB 4: GALERI PREWEDDING -->
+        <div id="tab-gallery" class="admin-tab-content">
+          
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Foto Galeri 1 (Outdoor)</h3>
+            <div class="admin-photo-uploader">
+              <img id="preview-gallery-1" src="/images/gallery-1.jpg" class="photo-preview-thumb" alt="Preview Galeri 1" />
+              <div class="uploader-controls">
+                <label for="file-gallery-1" class="upload-file-btn">
+                  <span>📷 Ganti Foto Galeri 1</span>
+                </label>
+                <input type="file" id="file-gallery-1" class="hidden-file-input" accept="image/*" />
+              </div>
+            </div>
+            <div class="admin-field" style="margin-top: 0.8rem;">
+              <label class="admin-label">Keterangan / Caption</label>
+              <input type="text" id="admin-gallery1-caption" class="admin-input" placeholder="Menatap masa depan bersama..." />
+            </div>
+          </div>
+
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Foto Galeri 2 (Intimate)</h3>
+            <div class="admin-photo-uploader">
+              <img id="preview-gallery-2" src="/images/gallery-2.jpg" class="photo-preview-thumb" alt="Preview Galeri 2" />
+              <div class="uploader-controls">
+                <label for="file-gallery-2" class="upload-file-btn">
+                  <span>📷 Ganti Foto Galeri 2</span>
+                </label>
+                <input type="file" id="file-gallery-2" class="hidden-file-input" accept="image/*" />
+              </div>
+            </div>
+            <div class="admin-field" style="margin-top: 0.8rem;">
+              <label class="admin-label">Keterangan / Caption</label>
+              <input type="text" id="admin-gallery2-caption" class="admin-input" placeholder="Canda dan tawa dalam kehangatan malam..." />
+            </div>
+          </div>
+
+        </div>
+
+        <!-- TAB 5: EKSPOR UNTUK GITHUB -->
+        <div id="tab-export" class="admin-tab-content">
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Ekspor Konfigurasi Permanen ke GitHub</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1rem; line-height: 1.6;">
+              Data yang Anda simpan saat ini tersimpan di memori browser (LocalStorage). Untuk menjadikan data ini permanen untuk semua tamu di seluruh dunia tanpa perlu upload ulang, salin kode di bawah ini dan tempelkan ke file <code>src/data/invitationData.ts</code> di repositori GitHub Anda:
+            </p>
+            
+            <div id="admin-export-code" class="export-code-box">// Kode konfigurasi otomatis akan muncul di sini...</div>
+            
+            <button id="admin-copy-code-btn" class="btn-gold btn-block">
+              <span>📋 Salin Kode Konfigurasi untuk GitHub</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bar -->
+      <div class="admin-dash-footer">
+        <div class="footer-left-actions">
+          <button id="admin-reset-btn" class="btn-danger-outline">Reset ke Default</button>
+        </div>
+        <div class="footer-right-actions">
+          <button id="admin-save-btn" class="btn-gold">
+            <span>💾 Simpan Perubahan</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
   </div>
 
   <!-- Main TypeScript Entry Script -->

@@ -1,6 +1,6 @@
 import type { InvitationConfig } from '../types';
 
-export const invitationData: InvitationConfig = {
+export const defaultInvitationData: InvitationConfig = {
   groom: {
     fullName: 'Raden Bayu Pratama, S.T.',
     shortName: 'Bayu',
@@ -19,7 +19,6 @@ export const invitationData: InvitationConfig = {
     instagram: 'sarah.anindya',
     bio: 'Putri kedua dari tiga bersaudara yang berprofesi sebagai Interior Designer dan pecinta flora nusantara.'
   },
-  // Set date to a future wedding date
   eventDate: new Date('2026-11-14T08:00:00+07:00'),
   akad: {
     title: 'Akad Nikah',
@@ -37,7 +36,7 @@ export const invitationData: InvitationConfig = {
     locationName: 'Grand Ballroom Hotel Indonesia Kempinski',
     locationAddress: 'Jl. M.H. Thamrin No.1, Menteng, Kota Jakarta Pusat',
     mapsUrl: 'https://maps.google.com/?q=Hotel+Indonesia+Kempinski+Jakarta',
-    notes: 'Dress code: Formal Modern / Batik Elegance'
+    notes: 'Dresscode: Formal Modern / Batik Elegance'
   },
   loveStory: [
     {
@@ -106,8 +105,52 @@ export const invitationData: InvitationConfig = {
     }
   ],
   quranVerse: {
-    arabic: 'وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً',
+    arabic: 'وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعELَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً',
     translation: '“Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”',
     surah: 'QS. Ar-Rum: 21'
   }
 };
+
+const STORAGE_KEY = 'wedding_invitation_custom_data_v1';
+
+export function getActiveInvitationData(): InvitationConfig {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      // Ensure eventDate is a real Date instance
+      parsed.eventDate = new Date(parsed.eventDate);
+      return parsed;
+    }
+  } catch (err) {
+    console.error('Failed to load custom invitation data from localStorage', err);
+  }
+  return defaultInvitationData;
+}
+
+export function saveCustomInvitationData(data: InvitationConfig): void {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch (err) {
+    console.error('Failed to save custom invitation data to localStorage', err);
+    throw err;
+  }
+}
+
+export function resetCustomInvitationData(): void {
+  localStorage.removeItem(STORAGE_KEY);
+}
+
+export function exportInvitationDataCode(data: InvitationConfig): string {
+  const jsonStr = JSON.stringify(data, null, 2);
+  // Format Date object in TS syntax
+  const dateIso = data.eventDate instanceof Date ? data.eventDate.toISOString() : new Date(data.eventDate).toISOString();
+  
+  return `import type { InvitationConfig } from '../types';
+
+export const defaultInvitationData: InvitationConfig = ${jsonStr.replace(
+    /"eventDate":\s*"[^"]+"/,
+    `"eventDate": new Date('${dateIso}')`
+  )};
+`;
+}
