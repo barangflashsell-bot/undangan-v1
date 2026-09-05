@@ -3,17 +3,7 @@
    ========================================================================== */
 
 .music-control {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 100;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.music-control.hidden {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.8);
+  display: none !important;
 }
 
 .music-btn {
