@@ -549,6 +549,7 @@
       <!-- Tab Navigation -->
       <div class="admin-tabs-nav">
         <button class="admin-tab-btn active" data-tab="couple">💑 Mempelai</button>
+        <button class="admin-tab-btn" data-tab="themes">🎨 Pilihan Tema</button>
         <button class="admin-tab-btn" data-tab="events">📅 Acara &amp; Waktu</button>
         <button class="admin-tab-btn" data-tab="gift">💳 Amplop &amp; QRIS</button>
         <button class="admin-tab-btn" data-tab="gallery">🖼️ Galeri Foto</button>
@@ -662,6 +663,51 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- TAB: PILIHAN TEMA -->
+        <div id="tab-themes" class="admin-tab-content">
+          <div class="admin-form-section">
+            <h3 class="admin-section-title">Pilih Tema Tampilan Undangan</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1.2rem; line-height: 1.5;">
+              Pilih gaya desain yang paling Anda sukai. Seluruh data yang Anda masukkan tetap aman dan tidak akan hilang saat berganti tema:
+            </p>
+
+            <div class="theme-options-grid">
+              <!-- Theme 1: Emerald & Gold -->
+              <div class="theme-card-option selected" data-theme-value="emerald-gold">
+                <div class="theme-swatches">
+                  <span class="theme-swatch" style="background: #0f1e1a;"></span>
+                  <span class="theme-swatch" style="background: #d4af37;"></span>
+                  <span class="theme-swatch" style="background: #1e352f;"></span>
+                </div>
+                <h4 class="theme-title">Emerald &amp; Gold</h4>
+                <span class="theme-badge">Dark Botanical Luxury</span>
+              </div>
+
+              <!-- Theme 2: Soft Pastel Rose & Ivory -->
+              <div class="theme-card-option" data-theme-value="rose-ivory">
+                <div class="theme-swatches">
+                  <span class="theme-swatch" style="background: #fbf8f5;"></span>
+                  <span class="theme-swatch" style="background: #d68080;"></span>
+                  <span class="theme-swatch" style="background: #8c4343;"></span>
+                </div>
+                <h4 class="theme-title">Rose &amp; Ivory</h4>
+                <span class="theme-badge">Light Romance</span>
+              </div>
+
+              <!-- Theme 3: Midnight Navy & Silver -->
+              <div class="theme-card-option" data-theme-value="midnight-navy">
+                <div class="theme-swatches">
+                  <span class="theme-swatch" style="background: #030712;"></span>
+                  <span class="theme-swatch" style="background: #38bdf8;"></span>
+                  <span class="theme-swatch" style="background: #0c152e;"></span>
+                </div>
+                <h4 class="theme-title">Midnight Navy</h4>
+                <span class="theme-badge">Celestial Starry</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- TAB 2: ACARA & WAKTU -->

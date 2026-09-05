@@ -48,7 +48,10 @@ export interface GalleryPhoto {
   category?: string;
 }
 
+export type ThemePreset = 'emerald-gold' | 'rose-ivory' | 'midnight-navy';
+
 export interface InvitationConfig {
+  theme?: ThemePreset;
   groom: PersonInfo;
   bride: PersonInfo;
   eventDate: Date;

@@ -1,6 +1,7 @@
 import type { InvitationConfig } from '../types';
 
 export const defaultInvitationData: InvitationConfig = {
+  theme: 'emerald-gold',
   groom: {
     fullName: 'Raden Bayu Pratama, S.T.',
     shortName: 'Bayu',

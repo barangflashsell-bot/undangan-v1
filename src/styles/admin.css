@@ -444,3 +444,65 @@
     justify-content: space-between;
   }
 }
+
+/* Theme Selector UI in Admin */
+.theme-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.theme-card-option {
+  background: rgba(0, 0, 0, 0.35);
+  border: 2px solid var(--color-emerald-border);
+  border-radius: 16px;
+  padding: 1.2rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+  text-align: center;
+}
+
+.theme-card-option:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-gold-400);
+}
+
+.theme-card-option.selected {
+  border-color: var(--color-gold-400);
+  background: rgba(212, 175, 55, 0.15);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+}
+
+.theme-swatches {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 0.8rem;
+}
+
+.theme-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.theme-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.theme-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: var(--color-gold-300);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+}
+

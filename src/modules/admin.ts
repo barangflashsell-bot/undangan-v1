@@ -1,4 +1,4 @@
-import type { InvitationConfig } from '../types';
+import type { InvitationConfig, ThemePreset } from '../types';
 import {
   getActiveInvitationData,
   saveCustomInvitationData,
@@ -69,6 +69,16 @@ export function initAdmin(onDataUpdated: (newData: InvitationConfig) => void) {
 
   // Working copy of data
   let currentConfig: InvitationConfig = { ...getActiveInvitationData() };
+  let selectedTheme: ThemePreset = currentConfig.theme || 'emerald-gold';
+
+  // Theme option clicks
+  document.querySelectorAll('.theme-card-option').forEach((card) => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.theme-card-option').forEach((c) => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selectedTheme = (card.getAttribute('data-theme-value') as ThemePreset) || 'emerald-gold';
+    });
+  });
 
   // Image storage cache for uploaded photos
   const uploadedPhotos: {
@@ -179,6 +189,16 @@ export function initAdmin(onDataUpdated: (newData: InvitationConfig) => void) {
   setupPhotoUploader('file-gallery-2', 'preview-gallery-2', (url) => { uploadedPhotos.gallery2 = url; });
 
   function populateFormValues(config: InvitationConfig) {
+    // Pilihan Tema
+    selectedTheme = config.theme || 'emerald-gold';
+    document.querySelectorAll('.theme-card-option').forEach((card) => {
+      if (card.getAttribute('data-theme-value') === selectedTheme) {
+        card.classList.add('selected');
+      } else {
+        card.classList.remove('selected');
+      }
+    });
+
     // Mempelai Pria
     setVal('admin-groom-name', config.groom.fullName);
     setVal('admin-groom-short', config.groom.shortName);
@@ -254,6 +274,7 @@ export function initAdmin(onDataUpdated: (newData: InvitationConfig) => void) {
     const gal2Img = uploadedPhotos.gallery2 || currentConfig.gallery[2]?.src || '/images/gallery-2.jpg';
 
     return {
+      theme: selectedTheme,
       groom: {
         fullName: getVal('admin-groom-name') || currentConfig.groom.fullName,
         shortName: getVal('admin-groom-short') || currentConfig.groom.shortName,

@@ -1,0 +1,200 @@
+/* ==========================================================================
+   THEME 2: SOFT PASTEL ROSE & IVORY PEARL (LIGHT LUXURY THEME)
+   ========================================================================== */
+
+[data-theme="rose-ivory"] {
+  /* Color Overrides */
+  --color-gold-100: #fff9f5;
+  --color-gold-200: #8c4343; /* Deep romantic rose for headings */
+  --color-gold-300: #a35656;
+  --color-gold-400: #d68080; /* Elegant Rose Gold */
+  --color-gold-500: #bf6767;
+  --color-gold-600: #8c4343;
+
+  --color-emerald-deep: #fbf8f5; /* Light ivory main container */
+  --color-emerald-card: rgba(255, 255, 255, 0.9); /* Frosted pure white glass */
+  --color-emerald-border: rgba(214, 128, 128, 0.35); /* Rose gold subtle border */
+  --color-emerald-light: #f5ebe6;
+
+  --color-cream: #ffffff;
+  --color-rose-soft: #fcefe9;
+  --color-dark-bg: #f4ece6; /* Soft warm ivory background */
+  
+  --color-text-main: #332222; /* High contrast elegant charcoal text */
+  --color-text-muted: #736060;
+  --color-text-dark: #1a0f0f;
+
+  /* Shadows for light mode */
+  --shadow-sm: 0 4px 14px rgba(180, 130, 130, 0.12);
+  --shadow-md: 0 8px 24px rgba(180, 130, 130, 0.16);
+  --shadow-lg: 0 16px 36px rgba(180, 130, 130, 0.22);
+  --shadow-gold: 0 8px 30px rgba(214, 128, 128, 0.28);
+}
+
+/* Background Atmosphere for Rose Ivory */
+[data-theme="rose-ivory"] body {
+  background: var(--color-dark-bg);
+  background-image: 
+    radial-gradient(circle at 10% 15%, rgba(247, 219, 212, 0.7) 0%, transparent 45%),
+    radial-gradient(circle at 90% 85%, rgba(255, 235, 230, 0.8) 0%, transparent 45%);
+}
+
+/* Cover Screen Overrides */
+[data-theme="rose-ivory"] .cover-screen {
+  background: linear-gradient(135deg, #fcedea 0%, #f7dfdb 50%, #f4ece6 100%);
+}
+
+[data-theme="rose-ivory"] .cover-backdrop {
+  background-image: radial-gradient(circle, rgba(214, 128, 128, 0.25) 1px, transparent 1px);
+  opacity: 0.6;
+}
+
+[data-theme="rose-ivory"] .cover-title {
+  color: #4a2626;
+  text-shadow: 0 2px 10px rgba(160, 90, 90, 0.15);
+}
+
+[data-theme="rose-ivory"] .cover-title span {
+  color: #c96f6f;
+}
+
+[data-theme="rose-ivory"] .cover-date {
+  color: #8c4343;
+}
+
+[data-theme="rose-ivory"] .cover-guest-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(214, 128, 128, 0.4);
+  box-shadow: 0 10px 30px rgba(180, 130, 130, 0.15);
+}
+
+[data-theme="rose-ivory"] .guest-name {
+  color: #692c2c;
+}
+
+[data-theme="rose-ivory"] .guest-notice {
+  color: #8c7373;
+}
+
+/* Hero Section */
+[data-theme="rose-ivory"] .hero-names {
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(70, 30, 30, 0.8);
+}
+
+[data-theme="rose-ivory"] .hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(244, 236, 230, 0.1) 0%,
+    rgba(244, 236, 230, 0.4) 50%,
+    rgba(251, 248, 245, 0.98) 95%,
+    var(--color-emerald-deep) 100%
+  );
+}
+
+[data-theme="rose-ivory"] .section-title {
+  color: #4a2626;
+}
+
+[data-theme="rose-ivory"] .person-name {
+  color: #4a2626;
+}
+
+[data-theme="rose-ivory"] .event-date {
+  color: #4a2626;
+}
+
+[data-theme="rose-ivory"] .countdown-title {
+  color: #4a2626;
+}
+
+[data-theme="rose-ivory"] .timeline-title {
+  color: #4a2626;
+}
+
+[data-theme="rose-ivory"] .wish-name {
+  color: #4a2626;
+}
+
+[data-theme="rose-ivory"] .footer-couple-names {
+  color: #4a2626;
+}
+
+/* Cards Overrides */
+[data-theme="rose-ivory"] .event-card.highlight-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fdf5f2 100%);
+  border-color: rgba(214, 128, 128, 0.5);
+  box-shadow: 0 10px 30px rgba(214, 128, 128, 0.18);
+}
+
+[data-theme="rose-ivory"] .countdown-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fdf5f2 100%);
+  border: 1px solid rgba(214, 128, 128, 0.35);
+}
+
+[data-theme="rose-ivory"] .timer-box {
+  background: #fbf5f2;
+  border: 1px solid rgba(214, 128, 128, 0.25);
+  box-shadow: inset 0 2px 4px rgba(180, 130, 130, 0.08);
+}
+
+[data-theme="rose-ivory"] .timer-num {
+  color: #8c4343;
+}
+
+[data-theme="rose-ivory"] .bank-card {
+  background: linear-gradient(135deg, #fdf8f5 0%, #faede8 100%);
+  border: 1px solid rgba(214, 128, 128, 0.4);
+}
+
+[data-theme="rose-ivory"] .bank-number {
+  color: #4a2626;
+}
+
+[data-theme="rose-ivory"] .btn-gold {
+  background: linear-gradient(135deg, #e08b8b, #c46868);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(214, 128, 128, 0.35);
+}
+
+[data-theme="rose-ivory"] .btn-gold:hover {
+  box-shadow: 0 10px 25px rgba(214, 128, 128, 0.5);
+}
+
+[data-theme="rose-ivory"] .btn-outline {
+  border-color: #c96f6f;
+  color: #8c4343;
+}
+
+[data-theme="rose-ivory"] .btn-outline:hover {
+  background: rgba(214, 128, 128, 0.12);
+}
+
+[data-theme="rose-ivory"] .music-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #d68080;
+  color: #8c4343;
+}
+
+[data-theme="rose-ivory"] .admin-trigger-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #d68080;
+  color: #8c4343;
+}
+
+[data-theme="rose-ivory"] .form-group input,
+[data-theme="rose-ivory"] .form-group select,
+[data-theme="rose-ivory"] .form-group textarea {
+  background: rgba(255, 255, 255, 0.95);
+  color: #332222;
+  border-color: rgba(214, 128, 128, 0.35);
+}
+
+[data-theme="rose-ivory"] .form-group select option {
+  background: #ffffff;
+  color: #332222;
+}
+
+[data-theme="rose-ivory"] .wish-card {
+  background: rgba(255, 255, 255, 0.92);
+}

@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderInvitationUI(data: InvitationConfig) {
     currentData = data;
 
+    // Apply Active Theme
+    const activeTheme = data.theme || 'emerald-gold';
+    document.documentElement.setAttribute('data-theme', activeTheme);
+
     // Cover
     const coverTitle = document.getElementById('cover-title');
     if (coverTitle) {

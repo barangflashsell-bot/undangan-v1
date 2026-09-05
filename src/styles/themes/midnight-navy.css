@@ -1,0 +1,75 @@
+/* ==========================================================================
+   THEME 3: MIDNIGHT CELESTIAL NAVY & STARLIGHT SILVER
+   ========================================================================== */
+
+[data-theme="midnight-navy"] {
+  /* Color Overrides */
+  --color-gold-100: #f0f4f8;
+  --color-gold-200: #cbd5e1;
+  --color-gold-300: #94a3b8;
+  --color-gold-400: #38bdf8; /* Celestial Ice Blue / Silver */
+  --color-gold-500: #0284c7;
+  --color-gold-600: #0369a1;
+
+  --color-emerald-deep: #090e1a; /* Midnight Deep Space */
+  --color-emerald-card: rgba(15, 23, 42, 0.85); /* Sapphire Slate Glass */
+  --color-emerald-border: rgba(56, 189, 248, 0.28);
+  --color-emerald-light: #1e293b;
+
+  --color-cream: #f8fafc;
+  --color-rose-soft: #e0f2fe;
+  --color-dark-bg: #030712;
+  
+  --color-text-main: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-text-dark: #0f172a;
+
+  --shadow-gold: 0 8px 30px rgba(56, 189, 248, 0.22);
+}
+
+[data-theme="midnight-navy"] body {
+  background: var(--color-dark-bg);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(30, 58, 138, 0.45) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(56, 189, 248, 0.12) 0%, transparent 45%);
+}
+
+[data-theme="midnight-navy"] .cover-screen {
+  background: linear-gradient(135deg, #030712 0%, #0c152e 50%, #020617 100%);
+}
+
+[data-theme="midnight-navy"] .cover-backdrop {
+  background-image: radial-gradient(circle, rgba(56, 189, 248, 0.2) 1px, transparent 1px);
+}
+
+[data-theme="midnight-navy"] .cover-title span {
+  color: #38bdf8;
+}
+
+[data-theme="midnight-navy"] .btn-gold {
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  color: #030712;
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.35);
+}
+
+[data-theme="midnight-navy"] .btn-outline {
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+[data-theme="midnight-navy"] .btn-copy:hover {
+  background: #38bdf8;
+  color: #030712;
+}
+
+[data-theme="midnight-navy"] .music-btn {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+[data-theme="midnight-navy"] .admin-trigger-btn {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: #38bdf8;
+  color: #38bdf8;
+}

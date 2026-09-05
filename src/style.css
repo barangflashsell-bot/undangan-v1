@@ -17,3 +17,7 @@
 @import './styles/audio.css';
 @import './styles/toast.css';
 @import './styles/admin.css';
+
+/* Custom Theme Overrides */
+@import './styles/themes/rose-ivory.css';
+@import './styles/themes/midnight-navy.css';
