@@ -1,0 +1,139 @@
+/* ==========================================================================
+   HERO BANNER & QURAN VERSE CARD
+   ========================================================================== */
+
+.hero-section {
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.hero-card {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+}
+
+.hero-image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: brightness(0.88);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 30, 26, 0.2) 0%,
+    rgba(15, 30, 26, 0.4) 50%,
+    rgba(15, 30, 26, 0.98) 95%,
+    var(--color-emerald-deep) 100%
+  );
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 0 1.5rem;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  font-size: 0.8rem;
+  letter-spacing: 0.35em;
+  color: var(--color-gold-300);
+  margin-bottom: 0.5rem;
+}
+
+.hero-names {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.8rem 0;
+}
+
+.hero-divider .line {
+  height: 1px;
+  width: 50px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-400), transparent);
+}
+
+.hero-divider .diamond {
+  color: var(--color-gold-400);
+  font-size: 0.8rem;
+}
+
+.hero-tagline {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--color-gold-200);
+  font-family: var(--font-serif);
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Quran Card */
+.quran-card {
+  margin: 2rem 1.6rem 0;
+  background: var(--color-emerald-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-emerald-border);
+  border-radius: 18px;
+  padding: 2.2rem 1.8rem;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.card-ornament {
+  color: var(--color-gold-400);
+  font-size: 0.9rem;
+  letter-spacing: 0.5em;
+  margin-bottom: 1.2rem;
+}
+
+.arabic-text {
+  font-family: 'Amiri', 'Traditional Arabic', serif;
+  font-size: 1.35rem;
+  line-height: 2.2;
+  color: var(--color-gold-200);
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.quran-translation {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.quran-surah {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-gold-400);
+  letter-spacing: 0.08em;
+}

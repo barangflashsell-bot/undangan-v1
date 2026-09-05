@@ -1,0 +1,18 @@
+/* ==========================================================================
+   MASTER STYLESHEET (UNDANGAN DIGITAL)
+   Modular CSS imports for clean maintenance and Git version control
+   ========================================================================== */
+
+@import './styles/variables.css';
+@import './styles/base.css';
+@import './styles/cover.css';
+@import './styles/hero.css';
+@import './styles/couple.css';
+@import './styles/countdown.css';
+@import './styles/events.css';
+@import './styles/story.css';
+@import './styles/gallery.css';
+@import './styles/gift.css';
+@import './styles/rsvp.css';
+@import './styles/audio.css';
+@import './styles/toast.css';

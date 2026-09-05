@@ -1,0 +1,154 @@
+/* ==========================================================================
+   RESET, BASE & GLOBAL LAYOUT
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-dark-bg);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(30, 53, 47, 0.45) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.08) 0%, transparent 40%);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Falling Petals Background Canvas */
+.petals-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 15;
+}
+
+/* Main Container: Mobile-first centered frame */
+.main-invitation {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.invitation-container {
+  width: 100%;
+  max-width: 540px;
+  background: var(--color-emerald-deep);
+  border-left: 1px solid rgba(212, 175, 55, 0.15);
+  border-right: 1px solid rgba(212, 175, 55, 0.15);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 10;
+  padding-bottom: 3rem;
+}
+
+/* Section Common Structure */
+.section {
+  padding: 3.5rem 1.6rem;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold-400);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+
+.section-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* Button Components */
+.btn-gold {
+  background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold-500));
+  color: var(--color-emerald-deep);
+  border: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-gold);
+  transition: var(--transition-bounce);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.45);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-gold-300);
+  border: 1px solid var(--color-gold-400);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.btn-outline:hover {
+  background: rgba(212, 175, 55, 0.12);
+  transform: translateY(-2px);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-svg {
+  width: 18px;
+  height: 18px;
+}

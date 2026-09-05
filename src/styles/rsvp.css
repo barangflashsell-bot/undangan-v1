@@ -1,0 +1,167 @@
+/* ==========================================================================
+   RSVP & WISHES SECTION
+   ========================================================================== */
+
+.rsvp-card {
+  background: var(--color-emerald-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-emerald-border);
+  border-radius: 20px;
+  padding: 2rem 1.6rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-gold-200);
+  margin-bottom: 0.4rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--color-emerald-border);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-gold-400);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.25);
+}
+
+.form-group select option {
+  background: var(--color-emerald-deep);
+  color: #fff;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Wishes List */
+.wishes-wrapper {
+  margin-top: 1.5rem;
+}
+
+.wishes-header {
+  margin-bottom: 1.2rem;
+}
+
+.wishes-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--color-gold-200);
+}
+
+.wishes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.wishes-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.wishes-list::-webkit-scrollbar-thumb {
+  background: var(--color-gold-500);
+  border-radius: 10px;
+}
+
+.wish-card {
+  background: rgba(18, 33, 29, 0.8);
+  border: 1px solid var(--color-emerald-border);
+  border-radius: 14px;
+  padding: 1.2rem;
+  box-shadow: var(--shadow-sm);
+  animation: fadeIn 0.4s ease;
+}
+
+.wish-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.wish-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold-600));
+  color: var(--color-emerald-deep);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.wish-user-meta {
+  flex-grow: 1;
+}
+
+.wish-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.wish-time {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+.wish-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+}
+
+.badge-attending {
+  background: rgba(76, 175, 80, 0.2);
+  color: #81c784;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.badge-absent {
+  background: rgba(244, 67, 54, 0.2);
+  color: #e57373;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.wish-message {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  white-space: pre-line;
+}

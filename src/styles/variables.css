@@ -1,0 +1,41 @@
+/* ==========================================================================
+   CSS VARIABLES & DESIGN TOKENS
+   ========================================================================== */
+
+:root {
+  /* Color Palette: Luxury Emerald & Champagne Gold */
+  --color-gold-100: #fbf6ec;
+  --color-gold-200: #f5ebd2;
+  --color-gold-300: #e8d3a7;
+  --color-gold-400: #d4af37;
+  --color-gold-500: #b89324;
+  --color-gold-600: #8c6e17;
+
+  --color-emerald-deep: #0f1e1a;
+  --color-emerald-card: rgba(18, 33, 29, 0.78);
+  --color-emerald-border: rgba(212, 175, 55, 0.28);
+  --color-emerald-light: #1e352f;
+
+  --color-cream: #faf7f2;
+  --color-rose-soft: #ebd0c4;
+  --color-dark-bg: #090e0c;
+  
+  --color-text-main: #f5ebd2;
+  --color-text-muted: #b7c2be;
+  --color-text-dark: #2b302e;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: 'Great Vibes', cursive;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.18);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.35);
+  --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.22);
+
+  /* Transitions */
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}

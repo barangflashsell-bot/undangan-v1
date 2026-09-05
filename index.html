@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>The Wedding of Bayu &amp; Sara | Undangan Pernikahan Digital</title>
+  <meta name="description" content="Undangan Pernikahan Digital Raden Bayu Pratama &amp; Sarah Anindya Putri. Sabtu, 14 November 2026." />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="The Wedding of Bayu &amp; Sara" />
+  <meta property="og:description" content="Dengan penuh rasa syukur, kami mengundang Anda untuk hadir di hari bahagia kami." />
+  <meta property="og:image" content="/images/hero.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <!-- Falling Petals Background Canvas -->
+  <canvas id="petals-canvas" class="petals-canvas"></canvas>
+
+  <!-- Floating Audio Button -->
+  <div id="music-control" class="music-control hidden" aria-label="Kontrol Pemutar Musik">
+    <button id="music-toggle-btn" class="music-btn" title="Nyalakan / Matikan Musik">
+      <div id="music-disc" class="music-disc">
+        <svg class="disc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </div>
+      <div id="music-waves" class="music-waves hidden">
+        <span></span><span></span><span></span>
+      </div>
+    </button>
+  </div>
+
+  <!-- Cover / Lock Screen -->
+  <div id="cover-screen" class="cover-screen">
+    <div class="cover-backdrop"></div>
+    <div class="cover-content">
+      <div class="cover-badge animate-fade-down">
+        <span class="ornament-leaf">❦</span>
+        <span>THE WEDDING OF</span>
+        <span class="ornament-leaf">❦</span>
+      </div>
+
+      <h1 class="cover-title animate-zoom-in">Bayu <span>&amp;</span> Sara</h1>
+      <p class="cover-date animate-fade-up">Sabtu, 14 November 2026</p>
+
+      <div class="cover-guest-card animate-fade-up">
+        <span class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i:</span>
+        <h2 id="guest-name-cover" class="guest-name">Tamu Undangan</h2>
+        <p class="guest-notice">*Mohon maaf bila ada kesalahan penulisan nama/gelar</p>
+      </div>
+
+      <button id="btn-open-invitation" class="btn-open animate-bounce">
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>Buka Undangan</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Invitation Content -->
+  <div id="main-invitation" class="main-invitation">
+    <div class="invitation-container">
+
+      <!-- Section: Hero Banner -->
+      <section class="section hero-section">
+        <div class="hero-card">
+          <div class="hero-image-wrapper">
+            <img src="/images/hero.jpg" alt="Bayu &amp; Sara Prewedding" class="hero-img" loading="eager" />
+            <div class="hero-overlay"></div>
+          </div>
+          <div class="hero-content">
+            <div class="hero-subtitle">WALIMATUL 'URS</div>
+            <h2 class="hero-names">Bayu &amp; Sara</h2>
+            <div class="hero-divider">
+              <span class="line"></span>
+              <span class="diamond">◆</span>
+              <span class="line"></span>
+            </div>
+            <p class="hero-tagline">“Menemukan ketenangan, merajut kasih, melangkah bersama dalam ridho-Nya.”</p>
+          </div>
+        </div>
+
+        <!-- Ayat Suci -->
+        <div class="card quran-card">
+          <div class="card-ornament top-ornament">✻ ✻ ✻</div>
+          <p class="arabic-text" dir="rtl">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+          <p class="quran-translation">
+            “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”
+          </p>
+          <span class="quran-surah">QS. Ar-Rum: 21</span>
+        </div>
+      </section>
+
+      <!-- Section: Mempelai (Couple) -->
+      <section class="section couple-section" id="couple">
+        <div class="section-header">
+          <span class="section-badge">PASANGAN MEMPELAI</span>
+          <h2 class="section-title">The Happy Couple</h2>
+          <p class="section-desc">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud melangsungkan pernikahan kami:</p>
+        </div>
+
+        <div class="couple-grid">
+          <!-- Groom Card -->
+          <div class="couple-card">
+            <div class="photo-frame">
+              <img src="/images/groom.jpg" alt="Foto Raden Bayu Pratama" class="couple-img" loading="lazy" />
+              <div class="frame-border"></div>
+            </div>
+            <h3 class="person-name">Raden Bayu Pratama, S.T.</h3>
+            <p class="parents-info">
+              Putra pertama dari:<br />
+              <strong>Bpk. H. Bambang Sujatmo</strong> &amp; <strong>Ibu Hj. Sri Rahayu</strong>
+            </p>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ig-icon">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>@bayu.pratama</span>
+            </a>
+          </div>
+
+          <div class="couple-ampersand">&amp;</div>
+
+          <!-- Bride Card -->
+          <div class="couple-card">
+            <div class="photo-frame">
+              <img src="/images/bride.jpg" alt="Foto Sarah Anindya Putri" class="couple-img" loading="lazy" />
+              <div class="frame-border"></div>
+            </div>
+            <h3 class="person-name">Sarah Anindya Putri, S.Ds.</h3>
+            <p class="parents-info">
+              Putri kedua dari:<br />
+              <strong>Bpk. Ir. Hendro Kusumo</strong> &amp; <strong>Ibu Hj. Ratna Juwita</strong>
+            </p>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ig-icon">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>@sarah.anindya</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Countdown Timer & Save The Date -->
+      <section class="section countdown-section">
+        <div class="countdown-card">
+          <span class="countdown-tag">SAVE THE DATE</span>
+          <h2 class="countdown-title">Menuju Hari Bahagia</h2>
+          
+          <div class="countdown-timer-grid">
+            <div class="timer-box">
+              <span id="cd-days" class="timer-num">00</span>
+              <span class="timer-label">Hari</span>
+            </div>
+            <div class="timer-colon">:</div>
+            <div class="timer-box">
+              <span id="cd-hours" class="timer-num">00</span>
+              <span class="timer-label">Jam</span>
+            </div>
+            <div class="timer-colon">:</div>
+            <div class="timer-box">
+              <span id="cd-minutes" class="timer-num">00</span>
+              <span class="timer-label">Menit</span>
+            </div>
+            <div class="timer-colon">:</div>
+            <div class="timer-box">
+              <span id="cd-seconds" class="timer-num">00</span>
+              <span class="timer-label">Detik</span>
+            </div>
+          </div>
+
+          <a id="btn-calendar" href="#" target="_blank" rel="noopener noreferrer" class="btn-gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-svg">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Simpan ke Google Calendar</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section: Agenda Acara (Event Schedule) -->
+      <section class="section events-section" id="events">
+        <div class="section-header">
+          <span class="section-badge">WAKTU &amp; TEMPAT</span>
+          <h2 class="section-title">Rangkaian Acara</h2>
+          <p class="section-desc">Kehadiran dan doa restu Anda merupakan kehormatan terbesar bagi kami.</p>
+        </div>
+
+        <div class="events-grid">
+          <!-- Card: Akad Nikah -->
+          <div class="event-card">
+            <div class="event-badge">AKAD NIKAH</div>
+            <div class="event-time-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="event-svg">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>08:00 - 10:00 WIB</span>
+            </div>
+            <h3 class="event-date">Sabtu, 14 November 2026</h3>
+            <div class="event-location">
+              <strong>Masjid Agung Sunda Kelapa</strong>
+              <p>Jl. Taman Sunda Kelapa No.16, Menteng, Jakarta Pusat</p>
+            </div>
+            <p class="event-note">Diharapkan hadir 15 menit sebelum acara dimulai dengan tertib &amp; khidmat.</p>
+            <a href="https://maps.google.com/?q=Masjid+Agung+Sunda+Kelapa+Jakarta" target="_blank" rel="noopener noreferrer" class="btn-outline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-svg">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Petunjuk Arah (Google Maps)</span>
+            </a>
+          </div>
+
+          <!-- Card: Resepsi Pernikahan -->
+          <div class="event-card highlight-card">
+            <div class="event-badge gold">RESEPSI PERNIKAHAN</div>
+            <div class="event-time-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="event-svg">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>11:00 - 14:00 WIB</span>
+            </div>
+            <h3 class="event-date">Sabtu, 14 November 2026</h3>
+            <div class="event-location">
+              <strong>Grand Ballroom Hotel Indonesia Kempinski</strong>
+              <p>Jl. M.H. Thamrin No.1, Menteng, Kota Jakarta Pusat</p>
+            </div>
+            <p class="event-note">Dresscode: Formal Modern / Batik Elegance</p>
+            <a href="https://maps.google.com/?q=Hotel+Indonesia+Kempinski+Jakarta" target="_blank" rel="noopener noreferrer" class="btn-gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-svg">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Petunjuk Arah (Google Maps)</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Kisah Cinta (Love Story) -->
+      <section class="section story-section">
+        <div class="section-header">
+          <span class="section-badge">PERJALANAN KAMI</span>
+          <h2 class="section-title">Our Love Story</h2>
+          <p class="section-desc">Sebuah kisah perjalanan yang dirajut dengan kasih sayang dan rasa syukur.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2020</span>
+              <h3 class="timeline-title">Pertemuan Pertama</h3>
+              <p>Bertemu di sebuah pameran seni dan desain di Jakarta. Secangkir kopi hangat menjadi awal perbincangan kami yang penuh kehangatan.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2022</span>
+              <h3 class="timeline-title">Menjalin Komitmen</h3>
+              <p>Setelah saling mengenal dan berbagi mimpi, kami memutuskan untuk saling mendampingi dan melangkah bersama dalam perjalanan cinta.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2024</span>
+              <h3 class="timeline-title">Momen Lamaran</h3>
+              <p>Di bawah pemandangan bukit yang tenang dan disaksikan keluarga tercinta, kami memantapkan niat suci untuk melangkah ke jenjang pernikahan.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-year">2026</span>
+              <h3 class="timeline-title">Hari Bahagia</h3>
+              <p>Dengan memohon ridho Allah SWT, kami mengikat janji suci sehidup sesurga dalam ikatan pernikahan yang kudus.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Galeri Prewedding -->
+      <section class="section gallery-section" id="gallery">
+        <div class="section-header">
+          <span class="section-badge">MOMEN TERINDAH</span>
+          <h2 class="section-title">Our Moments</h2>
+          <p class="section-desc">Sentuhan kenangan indah yang kami abadikan dalam bingkai cinta.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item item-large" data-gallery-index="0">
+            <img src="/images/hero.jpg" alt="Gallery 1" loading="lazy" />
+            <div class="gallery-hover-overlay">
+              <span class="gallery-view-icon">🔍</span>
+              <span class="gallery-hover-caption">Kisah kasih di antara hijaunya rumah kaca botanika</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-gallery-index="1">
+            <img src="/images/gallery-1.jpg" alt="Gallery 2" loading="lazy" />
+            <div class="gallery-hover-overlay">
+              <span class="gallery-view-icon">🔍</span>
+              <span class="gallery-hover-caption">Menatap masa depan bersama di hamparan lembah emas</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-gallery-index="2">
+            <img src="/images/gallery-2.jpg" alt="Gallery 3" loading="lazy" />
+            <div class="gallery-hover-overlay">
+              <span class="gallery-view-icon">🔍</span>
+              <span class="gallery-hover-caption">Canda dan tawa dalam kehangatan malam</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-gallery-index="3">
+            <img src="/images/groom.jpg" alt="Groom Portrait" loading="lazy" />
+            <div class="gallery-hover-overlay">
+              <span class="gallery-view-icon">🔍</span>
+              <span class="gallery-hover-caption">Raden Bayu Pratama</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-gallery-index="4">
+            <img src="/images/bride.jpg" alt="Bride Portrait" loading="lazy" />
+            <div class="gallery-hover-overlay">
+              <span class="gallery-view-icon">🔍</span>
+              <span class="gallery-hover-caption">Sarah Anindya Putri</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Amplop Digital & Kado Pernikahan -->
+      <section class="section gift-section" id="gift">
+        <div class="section-header">
+          <span class="section-badge">TANDA KASIH</span>
+          <h2 class="section-title">Wedding Gift</h2>
+          <p class="section-desc">Doa restu Anda merupakan karunia terindah bagi kami. Namun jika ingin memberikan tanda kasih, Anda dapat melalui fitur amplop digital berikut:</p>
+        </div>
+
+        <div class="gift-grid">
+          <!-- Bank Card 1: BCA -->
+          <div class="bank-card">
+            <div class="bank-top">
+              <span class="bank-chip"></span>
+              <span class="bank-brand">BCA</span>
+            </div>
+            <div class="bank-number">8691 8239 01</div>
+            <div class="bank-holder">
+              <span>Atas Nama</span>
+              <strong>Raden Bayu Pratama</strong>
+            </div>
+            <button class="btn-copy" data-copy-account="8691823901" data-bank="BCA">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="copy-svg">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Salin No. Rekening</span>
+            </button>
+          </div>
+
+          <!-- Bank Card 2: Mandiri -->
+          <div class="bank-card">
+            <div class="bank-top">
+              <span class="bank-chip"></span>
+              <span class="bank-brand">MANDIRI</span>
+            </div>
+            <div class="bank-number">1370 0192 8472 1</div>
+            <div class="bank-holder">
+              <span>Atas Nama</span>
+              <strong>Sarah Anindya Putri</strong>
+            </div>
+            <button class="btn-copy" data-copy-account="1370019284721" data-bank="Bank Mandiri">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="copy-svg">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Salin No. Rekening</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- QRIS Scan Gift -->
+        <div class="qris-card">
+          <h3 class="qris-title">QRIS Angpao Digital</h3>
+          <p class="qris-subtitle">Scan melalui aplikasi mobile banking atau e-wallet (BCA, Mandiri, GoPay, OVO, Dana, dll)</p>
+          <div class="qris-image-wrapper">
+            <img src="/images/qris.jpg" alt="QRIS Wedding Gift" class="qris-img" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: RSVP & Buku Tamu (Wishes) -->
+      <section class="section rsvp-section" id="rsvp">
+        <div class="section-header">
+          <span class="section-badge">KONFIRMASI &amp; DOA</span>
+          <h2 class="section-title">Buku Tamu &amp; RSVP</h2>
+          <p class="section-desc">Mohon konfirmasikan kehadiran Anda serta sampaikan doa restu untuk kedua mempelai.</p>
+        </div>
+
+        <!-- Form RSVP -->
+        <div class="rsvp-card">
+          <form id="rsvp-form" class="rsvp-form">
+            <div class="form-group">
+              <label for="rsvp-name">Nama Lengkap</label>
+              <input type="text" id="rsvp-name" placeholder="Masukkan nama lengkap Anda" required />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="rsvp-attendance">Konfirmasi Kehadiran</label>
+                <select id="rsvp-attendance" required>
+                  <option value="hadir">Hadir</option>
+                  <option value="tidak_hadir">Berhalangan Hadir</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="rsvp-guests">Jumlah Tamu</label>
+                <select id="rsvp-guests">
+                  <option value="1">1 Orang</option>
+                  <option value="2">2 Orang</option>
+                  <option value="3">3 Orang</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="rsvp-message">Ucapan &amp; Doa Restu</label>
+              <textarea id="rsvp-message" rows="4" placeholder="Tuliskan ucapan dan doa terbaik Anda untuk kedua mempelai..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-gold btn-block">
+              <span>Kirim Konfirmasi &amp; Doa</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Daftar Doa & Ucapan -->
+        <div class="wishes-wrapper">
+          <div class="wishes-header">
+            <h3 id="wishes-count">3 Ucapan &amp; Doa</h3>
+          </div>
+          <div id="wishes-list" class="wishes-list">
+            <!-- Populated dynamically via TypeScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Penutup (Footer) -->
+      <footer class="section footer-section">
+        <div class="footer-card">
+          <div class="footer-ornament">❧</div>
+          <p class="footer-text">
+            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu bagi kami.
+          </p>
+          <div class="footer-closing">
+            <span>Kami yang berbahagia,</span>
+            <h3 class="footer-couple-names">Bayu &amp; Sara</h3>
+            <span class="footer-families">Beserta Keluarga Besar Kedua Mempelai</span>
+          </div>
+          <div class="footer-sub">
+            <p>Dibuat dengan rasa cinta &bull; 2026</p>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Lightbox Modal for Gallery -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Pratinjau Foto">
+    <button id="lightbox-close" class="lightbox-close-btn" aria-label="Tutup">&times;</button>
+    <button id="lightbox-prev" class="lightbox-nav-btn prev" aria-label="Foto Sebelumnya">&#10094;</button>
+    <div class="lightbox-body">
+      <img id="lightbox-img" src="" alt="Zoom Foto" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+    <button id="lightbox-next" class="lightbox-nav-btn next" aria-label="Foto Berikutnya">&#10095;</button>
+  </div>
+
+  <!-- Main TypeScript Entry Script -->
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
